@@ -1,14 +1,47 @@
-.TOP
+h2{
+    background: linear-gradient(#47FFFF, #FF85F9);
+    max-width: 100px
+}
+
+#MainHeaderInRedFrame
 {
+    width: 150px;
+    height: 150px;
     background-color: pink;
         border-style: dotted; blue;
-    position: relative;
+    position: sticky;
+    top: 10px;
+    margin: auto;
 
 }
-.Capital
+.AquamarineText
 {color: aquamarine;
+}
 
+#BlackDottedFrame
+{ border-style: dotted; /* it sets a border */
+    border-width: 10px;    /* it sets the width of the border */
+}
 
+#GreenBackground
+{ background: green;
+    max-width: 60px;
+    min-height: 120px;
+    margin: auto;
+    padding-top: 30px
+}
 
+div {
+    width: 20vmin;
+    height: 20vmax;
+}
 
+p{
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    height: 30px;
+}
+
+span {
+    border-bottom: 2px solid green;
 }
