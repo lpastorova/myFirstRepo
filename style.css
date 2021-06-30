@@ -1,6 +1,8 @@
 h2{
     background: linear-gradient(#47FFFF, #FF85F9);
-    max-width: 100px
+    max-width: 100px;
+    position: relative;
+    left: 30px;
 }
 
 #MainHeaderInRedFrame
@@ -8,7 +10,7 @@ h2{
     width: 150px;
     height: 150px;
     background-color: pink;
-        border-style: dotted; blue;
+        border-style: dotted;
     position: sticky;
     top: 10px;
     margin: auto;
@@ -16,6 +18,29 @@ h2{
 }
 .AquamarineText
 {color: aquamarine;
+}
+
+.lorem_puppy
+{   position: relative;
+    border: solid;
+    border-color: black;
+    width: 1200px;
+    height: 500px;
+
+}
+
+.puppy
+{float: left;
+    max-width: 300px;
+    max-height: 300px;
+    top: 10px;
+    left: 10px;
+
+}
+
+.lorem
+{position: relative;
+
 }
 
 #BlackDottedFrame
@@ -28,7 +53,7 @@ h2{
     max-width: 60px;
     min-height: 120px;
     margin: auto;
-    padding-top: 30px
+    padding-top: 30px;
 }
 
 div {
