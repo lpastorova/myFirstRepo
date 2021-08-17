@@ -11,7 +11,7 @@
 
 
 <ul id="task-list">
-    <li>
+    <li id="new-id">
         <label for="checkbox1"></label>
         <input id="checkbox1" type="checkbox">
         <span class="task">Beer</span>
@@ -36,12 +36,25 @@
 <script>
 
     let ul = document.getElementById("task-list");
+
     function myfunc() {
         let getElement = document.getElementById("input-task").value;
         let li = document.createElement("li");
+
+        let checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+
+        let span = document.createElement('task');
+
+        li.appendChild(span);
+        li.appendChild(checkbox);
         li.appendChild(document.createTextNode(getElement));
+
+
         ul.appendChild(li)
+
     }
+
 
 </script>
 
