@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+
+<!--create the input field and "add task" button. Button clicks and call the function to create new li item and clear the field-->
+<label for="input-task">To-Do List</label>
+<input id="input-task" type="text" required="required">
+<button id="add-task-button" onclick="addListItemsClearInputField()">Add task</button>
+
+<!--hardecoded shit don't change!-->
+<ul id="task-list">
+    <li id="new-id">
+        <label for="checkbox1"></label>
+        <input id="checkbox1" type="checkbox">
+        <span class="task">Beer</span>
+        <button class="delete-btn"></button>
+    </li>
+    <li>
+        <label for="checkbox2"></label>
+        <input id="checkbox2" type="checkbox">
+        <span class="task">Wine</span>
+        <button class="delete-btn"></button>
+    </li>
+
+    <li>
+        <label for="checkbox3"></label>
+        <input id="checkbox3" type="checkbox">
+        <span class="task">New task for the test purpose</span>
+<!--        hardcoded shit with custom function - removetask on last button - delete this li - don't change!-->
+        <button class="delete-btn" onclick="removeTask(this)"></button>
+    </li>
+
+</ul>
+
+<script>
+
+    // gets button, goes to its parent = li, then goes to its parent = ul, then removes the child of the ul = li
+    function removeTask(item) {
+        item.parentNode.parentNode.removeChild(item.parentNode)
+    }
+
+    let ul = document.getElementById("task-list");
+
+
+    function addListItemsClearInputField() {
+        let getElement = document.getElementById("input-task").value;
+// checks if getElement is empty = empty input field on button click
+//         if yes, do nothing = don't add new li
+        if (getElement === "") {
+
+            // otherwise create new li
+        } else {
+// create li element
+            let li = document.createElement("li");
+// create checkbox element
+            let checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+// create span element, add class name "task"
+            let span = document.createElement("span");
+            // a = a + 1
+            // same as a += 1
+            span.className += "task";
+// create button element, add class name "delete-btn", add function
+            let button = document.createElement("button");
+            button.className += "delete-btn";
+            // same logic as removeTask, calls directly created button
+            button.onclick = function () {
+                button.parentNode.parentNode.removeChild(button.parentNode);
+            }
+
+// create the children of the li in this order
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(document.createTextNode(getElement));
+            li.appendChild(button);
+
+// put the new created li to the end of the ul
+            ul.appendChild(li);
+// clears the input field
+            document.getElementById("input-task").value = "";
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>
+
+<!--Stage 3/4: Job's done-->
+<!--Description-->
+<!--A good To-Do List app can mark user's tasks as complete. Let's add this feature.-->
+
+<!--Objectives-->
+<!--A task should be marked as complete when a user clicks on the task checkbox. When the checkbox is checked, the <span> element with the task class should have the following properties:-->
+
+<!--text-decoration: line-through;-->
+<!--If the checkbox is unchecked, remove these properties from the <span> element.-->
+
+<!--Examples-->
+<!--Example 1: An example of a To-Do List-->
